@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ResourceTrack | Login</title>
+
+    <style>
+      /* GENERAL PAGE STYLING */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+
+        background-image: url("/Images/Background Photo.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      /* MAIN PAGE LAYOUT */
+      .login-page {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        min-height: 100vh;
+        width: 100%;
+        padding: 50px 6%;
+        box-sizing: border-box;
+
+        gap: 50px;
+      }
+
+      /* LEFT SIDE: WELCOME WORDS */
+      .welcome-panel {
+        width: 55%;
+        max-width: 650px;
+        color: white;
+        position: relative;
+        z-index: 1;
+      }
+
+      .welcome-panel h1 {
+        font-size: 52px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: white;
+
+        text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.45);
+      }
+
+      .welcome-panel h2 {
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 1.25;
+        margin: 0 0 20px;
+        color: white;
+
+        text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.45);
+      }
+
+      .welcome-description {
+        font-size: 18px;
+        line-height: 1.8;
+        max-width: 600px;
+        color: white;
+
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.65);
+      }
+
+      /* RIGHT SIDE: LOGIN PANEL */
+      .login-panel {
+        width: 40%;
+        max-width: 450px;
+        position: relative;
+        z-index: 2;
+        flex-shrink: 0;
+      }
+
+      .login-container {
+        width: 100%;
+        box-sizing: border-box;
+
+        padding: 35px;
+        background-color: rgba(255, 255, 255, 0.95);
+
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* FORM LABELS */
+      .login-container label {
+        display: block;
+        margin-bottom: 8px;
+
+        color: #374151;
+        font-weight: 600;
+      }
+
+      /* FORM INPUTS */
+      .login-container input {
+        width: 100%;
+        padding: 12px;
+
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        box-sizing: border-box;
+
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+
+      .login-container input:focus {
+        outline: none;
+        border-color: #1266d6;
+        box-shadow: 0 0 0 3px rgba(18, 102, 214, 0.15);
+      }
+
+      /* FORGOT PASSWORD LINK */
+      .forgot-password {
+        display: block;
+        margin-bottom: 22px;
+
+        color: #1266d6;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .forgot-password:hover {
+        text-decoration: underline;
+      }
+
+      /* SIGN IN BUTTON */
+      .login-container button {
+        width: 100%;
+        padding: 14px;
+
+        background-color: #1266d6;
+        color: white;
+
+        border: none;
+        border-radius: 6px;
+
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+
+        transition: background-color 0.3s ease;
+      }
+
+      .login-container button:hover {
+        background-color: #0d4fa8;
+      }
+
+      /* SMALLER SCREENS */
+      @media (max-width: 900px) {
+        .login-page {
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
+          padding: 40px 20px;
+        }
+
+        .welcome-panel {
+          width: 100%;
+          text-align: center;
+        }
+
+        .welcome-panel h1 {
+          font-size: 36px;
+        }
+
+        .welcome-panel h2 {
+          font-size: 25px;
+        }
+
+        .welcome-description {
+          font-size: 18px;
+          margin-left: auto;
+          margin-right: auto;
+          line-height: 1.8;
+          max-width: 600px;
+
+          color: #f1f5f9;
+          font-weight: 400;
+          letter-spacing: 0.3px;
+
+          text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.75);
+        }
+
+        .login-panel {
+          width: 100%;
+          max-width: 450px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="login-page">
+      <!-- LEFT SIDE: WELCOME WORDS -->
+      <section class="welcome-panel">
+        <h1>ResourceTrack</h1>
+
+        <h2>Manage Smarter.Build Better. Grow Stronger.</h2>
+
+        <p class="welcome-description">
+          Every resource matters. Every project counts. Take control of your
+          materials, equipment, workforce, and project costs with one powerful
+          platform. ResourceTrack empowers your team to work smarter, improve
+          accountability, and deliver stronger projects with confidence.
+        </p>
+      </section>
+
+      <!-- RIGHT SIDE: LOGIN FORM -->
+      <section class="login-panel">
+        <div class="login-container">
+          <form>
+            <label for="companycode">Company Code</label>
+            <input
+              type="text"
+              name="companycode"
+              id="companycode"
+              placeholder="Enter your company code"
+              required
+            />
+
+            <label for="email">Email / Username</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Enter your email or username"
+              required
+            />
+
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+
+            <a href="#" class="forgot-password"> Forgot password? </a>
+
+            <button type="submit">Sign In</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+```
